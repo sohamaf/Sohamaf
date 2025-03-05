@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohamaf - Marché des Pièces D'auto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (Logo in the browser tab) -->
+    <link rel="icon" href="img/logo.png" type="image/png">
+
+    <!-- Meta Description -->
+    <meta name="description" content="Vente de batteries, huiles, pièces détachées pour voitures, et accessoires automobiles. Achetez des pièces de rechange automobiles et accessoires de qualité à des prix compétitifs sur Sohamaf.">
+
+    <!-- Meta Keywords (French) -->
+    <meta name="keywords" content="Sohamaf, batteries de voiture, huiles moteur, pièces détachées voiture, accessoires automobile, pièces de rechange, batterie voiture, entretien voiture, huile moteur, pièces auto, vente de pièces automobiles, pièces de rechange automobile, batterie de voiture pas cher, accessoires voiture en ligne, pièces de moteur automobile, pièces de remplacement, pièces auto en ligne, réparations auto, accessoires voiture, acheter pièces auto en ligne, produits automobiles, pièces voitures haut de gamme, entretien de véhicule, réparation de voiture, service automobile, qualité pièces automobile">
+
+    <!-- Meta Description (English) -->
+    <meta name="description" content="Sohamaf online store for car batteries, motor oils, spare parts, and auto accessories. Buy quality car parts and accessories at competitive prices.">
+
+    <!-- Meta Keywords (English) -->
+    <meta name="keywords" content="Sohamaf, car batteries, motor oils, car parts, auto accessories, spare parts, car battery, car maintenance, engine oil, auto parts, automotive spare parts, car replacement parts, best car batteries, online car parts store, auto repair parts, high-quality car parts, automotive repair, car care products, online auto accessories, replacement auto parts, buy car parts online, auto repair services, quality car parts, car engine parts, best motor oils">
+
+    <!-- Meta Description (Arabic) -->
+    <meta name="description" content="سوهاماف متجر إلكتروني لبيع بطاريات السيارات، والزيوت، وقطع الغيار، وإكسسوارات السيارات. اشترِ قطع غيار السيارات والإكسسوارات عالية الجودة بأسعار تنافسية.">
+
+    <!-- Meta Keywords (Arabic) -->
+    <meta name="keywords" content="سوهاماف, بطاريات السيارات, زيوت المحرك, قطع غيار السيارات, إكسسوارات السيارات, قطع غيار, صيانة السيارات, زيت المحرك, قطع السيارات, بيع قطع غيار السيارات, قطع غيار السيارات الأصلية, قطع غيار السيارات عالية الجودة, أفضل بطاريات السيارات, متجر قطع غيار السيارات, قطع غيار السيارات بأسعار تنافسية, قطع غيار السيارات عبر الإنترنت, أدوات صيانة السيارات, بيع قطع غيار السيارات عبر الإنترنت, منتجات السيارات, قطع غيار المحرك, سيارات, إكسسوارات السيارات عبر الإنترنت, قطع غيار السيارة الفاخرة">
+
+</head>
+<body>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #1f1f1f;
+            color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo h1 {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 2rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* Categories Bar */
+        .categories-bar {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f8f8f8;
+        }
+
+        .categories-bar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 15px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid #FFD700;
+            background-color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .categories-bar a:hover {
+            background-color: #FFD700;
+            color: white;
+        }
+
+        /* Category Buttons (New Section for Buttons Under Categories) */
+        .category-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .category-button {
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;  /* Make the button clickable */
+            transition: transform 0.3s ease, opacity 0.3s ease;  /* Add smooth transition effects */
+        }
+
+        .category-button:hover {
+            transform: scale(1.05);  /* Slightly enlarge the button when hovered */
+            opacity: 0.8;  /* Optional: Add opacity change when hovering for a more interactive feel */
+        }
+
+        .category-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Product Listings Section */
+        .products {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .products h2 {
+            font-size: 2.5rem;
+            font-family: 'Source Serif Pro', serif;
+            margin-bottom: 30px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            width: 280px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-item p {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .product-item .old-price {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .product-item .new-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #228B22;
+        }
+
+        .product-item .description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-item a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #FFD700;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-item a:hover {
+            background-color: #ff6a00;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Source Serif Pro', serif;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        footer ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* Dark/Light Mode Toggle */
+        .dark-light-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #FFD700;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dark-light-toggle:hover {
+            background-color: #ff6a00;
+        }
+		
+	
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1f1f1f;
+    color: #f4f4f4;
+}
+
+/* Ensure h3 and p inside .dark-mode are black */
+body.dark-mode h3,
+body.dark-mode p {
+    color: #333 !important; /* Ensures the text stays black in dark mode */
+}
+
+.qr-codes {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;  /* Space out the QR codes evenly */
+    align-items: center;           /* Align items vertically in the center */
+    gap: 20px;                     /* Optional: space between the QR codes */
+    margin-top: 40px;              /* Optional: add some top margin */
+}
+
+.qr-item {
+    text-align: center;           /* Center align the content inside each item */
+    display: flex;
+    flex-direction: column;       /* Stack the QR code and text vertically */
+    align-items: center;          /* Center-align the items */
+    text-decoration: none;        /* Remove the underline from the link */
+}
+
+.qr-code {
+    width: 120px;                 /* Control the size of the QR code */
+    height: 120px;                /* Control the size of the QR code */
+    margin-bottom: 10px;          /* Add space between the QR code and the text */
+}
+
+.app-info {
+    display: flex;
+    align-items: center;         /* Align logo and text horizontally */
+    justify-content: center;     /* Center the logo and text */
+    gap: 10px;                   /* Add space between the logo and the text */
+}
+
+.app-logo {
+    width: 40px;                  /* Control the size of the app logo */
+    height: 40px;                 /* Control the size of the app logo */
+}
+
+.app-description {
+    font-size: 1rem;              /* Set font size for the app name */
+    font-weight: 500;             /* Optional: make the app name bold */
+    color: #333;                  /* Default color for the text */
+    margin: 0;                    /* Remove any extra margin */
+}
+
+/* Optional: Make the text inside .app-description white if needed */
+.app-description {
+    color: white !important; /* Make text white */
+    font-size: 16px; /* Adjust the font size if needed */
+    text-align: center !important; /* Optional, if you want to center the text */
+    margin-top: 1px !important; /* Optional, to add some space above the text */
+}
+
+.app-logo {
+    width: 40px;                  /* Control the size of the app logo */
+    height: 40px;                 /* Control the size of the app logo */
+    margin-bottom: 5px;           /* Add space between the logo and text */
+}
+
+.app-info p {
+    font-size: 1rem;              /* Set font size for the app name */
+    font-weight: 500;             /* Optional: make the app name bold */
+    color: #333;                  /* Default color for the text */
+}
+
+.green-btn {
+    background-color: #25D366; /* WhatsApp green color */
+    color: white; /* Text color */
+    padding: 2px 15px !important; /* Padding to adjust button size */
+    text-decoration: none; /* Remove underline */
+    display: inline-flex !important; /* Flexbox to align icon and text */
+    align-items: center; /* Vertically center the items */
+    font-weight: bold; /* Make the text bold */
+    border-radius: 5px; /* Optional: Rounded corners */
+    text-align: center; /* Center the text */
+    white-space: nowrap; /* Prevent the text from wrapping to the next line */
+}
+
+.whatsapp-icon {
+    width: 30px !important; /* Adjust the icon size */
+    height: auto !important; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.green-btn:hover {
+    background-color: #FF7F00; /* Orange color when mouse hovers */
+}
+
+.green-btn:active {
+    background-color: #128C7E; /* Darker shade when clicked */
+}
+
+/* Make logo clickable and remove link styling */
+        .logo-link {
+            text-decoration: none; /* Remove underline */
+            color: white; /* Keep the text color white */
+        }
+
+        .logo-link:hover {
+            color: #FFD700; /* Optional: Change color on hover */
+        }
+		
+		.app-description {
+        color: white !important; /* Make text white */
+        font-size: 16px; /* Adjust the font size if needed */
+        text-align: center !important; /* Optional, if you want to center the text */
+        margin-top: 1px !important; /* Optional, to add some space above the text */
+    }
+	
+	.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Add border for clarity (optional) */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-item .product-details {
+    flex-grow: 1; /* This allows the details section to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Ensures the button stays at the bottom */
+}
+
+/* Default styles for light mode (if necessary) */
+body {
+    color: black;
+    
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212; /* Example dark background */
+    color: white; /* Default text color in dark mode */
+}
+
+/* Ensuring p tags remain white even in dark mode */
+p1 {
+    color: white !important; /* Force p tags to always be white */
+}
+
+/* Specific override for dark mode to ensure no overrides */
+body.dark-mode p1 {
+    color: white !important; /* Ensure p text stays white in dark mode */
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Dark/Light Mode Toggle -->
+    <button class="dark-light-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <h1>Sohamaf</h1>
+                <p1>Pièces D'auto Premium</p1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Boutique</a></li>
+                
+                <li><a href="contact.html">Contactez-Nous</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Categories Bar -->
+    <section class="categories-bar">
+	    <a href="index.html">Packs</a>
+        <a href="Batterie.html">Batterie</a>
+        <a href="#">Huiles</a>
+        <a href="ap.html">Pièce</a>
+    </section>
+
+    <!-- Category Buttons (Below the Category Links) -->
+    <section class="category-buttons">
+        <div class="category-button" onclick="showHuiles('huile1')"><img src="https://pr-lg.ru/assets/72498bac/c0251f2490d3d7dce84fpennol.png" alt="Huile 1"></div>
+        <div class="category-button" onclick="showHuiles('huile2')"><img src="https://th.bing.com/th/id/OIP.mL787htDHedYBVQZGqpiYAHaEK?rs=1&pid=ImgDetMain" alt="Huile 2"></div>
+        <div class="category-button" onclick="showHuiles('huile3')"><img src="https://th.bing.com/th/id/OIP.nOowZ_PQRgnbuhG3S5R9TgHaHC?rs=1&pid=ImgDetMain" alt="Huile 3"></div>
+        <div class="category-button" onclick="showHuiles('huile4')"><img src="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/09/49/69/094969b5-56b0-cee8-b455-5ac307542339/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png" alt="Huile 4"></div>
+        <div class="category-button" onclick="showHuiles('huile6')"><img src="https://www.pngitem.com/pimgs/m/626-6269173_tendeiros-baltazar-sa-hd-png-download.png" alt="Huile 6"></div>
+    </section>
+
+    <!-- Products Section for Huiles -->
+    <section class="products" id="huiles">
+        <h2>Produits Huiles</h2>
+        <div class="product-list" id="product-list-huiles">
+            <!-- Products will be dynamically updated here -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p1>&copy; 2025 Sohamaf. Tous droits réservés.</p1>
+			<p1>Réalisée par Hatim Morchid.</p1>
+            <p1>Contactez-nous sur :</p1>
+        <ul>
+            <li><a href="https://wa.me/212668552423" target="_blank">WhatsApp</a></li>
+            <li><a href="mailto:contact.sohamaf@gmail.com">E-mail</a></li>
+            <li><a href="https://www.instagram.com/soha_maf/">Instagram</a></li>
+        </ul>
+			<p1>Scannez nos QR codes :</p1>
+        <div class="qr-codes">
+    <!-- QR Code for Localisation -->
+<a href="https://www.google.com/maps/place/SOHAMAF+pi%C3%A8ce+auto/@34.0293231,-4.9949407,17z/data=!3m1!4b1!4m6!3m5!1s0xd9f8b007c7608b3:0xf4789012fcc10825!8m2!3d34.0293187!4d-4.9923604!16s%2Fg%2F11wbkmpww0?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="qr-item">
+    <img src="img/Qr-Local.jpg" alt="Localisation" class="qr-code">
+    <div class="app-info">
+        <img src="https://clipground.com/images/pin-logo-png-5.png" alt="Localisation Logo" class="app-logo">
+        <p1 class="app-description">Localisation App</p1>
+    </div>
+</a>
+
+<!-- QR Code for Instagram -->
+<a href="https://www.instagram.com/soha_maf/" target="_blank" class="qr-item">
+    <img src="img/Qr-insta.jpg" alt="Instagram" class="qr-code">
+    <div class="app-info">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" class="app-logo">
+        <p1 class="app-description">Instagram</p1>
+    </div>
+</a>
+
+<!-- QR Code for WhatsApp -->
+<a href="https://wa.me/212668552423" target="_blank" class="qr-item">
+    <img src="img/Qr-watssap.jpg" alt="WhatsApp" class="qr-code">
+    <div class="app-info">
+        <img src="https://static.vecteezy.com/system/resources/previews/012/162/809/original/whatsapp-logo-3d-render-free-png.png" alt="WhatsApp Logo" class="app-logo">
+        <p1 class="app-description">WhatsApp</p1>
+    </div>
+</a>
+</div>
+        </div>
+		
+    </footer>
+
+    <!-- Dark/Light Mode Script -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function showHuiles(huile) {
+            let products = [];
+
+            // Define products for each huile
+            if (huile === 'huile1') {
+                products = [  				
+				   
+				    {name: 'Pennol 5W30 C2/C3 (5L)', oldPrice: '450 MAD', newPrice: '400 MAD', description: '', image: 'https://images.squarespace-cdn.com/content/v1/6241963c66ca5536c72a1424/5ffd1f0c-5c5c-4397-aa09-2821dec77a25/Packshot_75601_Pennol_5L_1044596.png'},
+                    {name: 'Pennol 5W30 C2/C3 (1L)', oldPrice: '150 MAD', newPrice: '100 MAD', description: '', image: 'https://oilservice32.ru/upload/iblock/783/efhbzb7jgnsms90ozbsblhbd3iejr05l.png'},
+					{name: 'Pennol 10W40 B4 (5L)', oldPrice: '270 MAD', newPrice: '220 MAD', description: '', image: 'https://images.squarespace-cdn.com/content/v1/6241963c66ca5536c72a1424/1648481419365-PBA6FMUUYZMVWE9IJ7MZ/Packshot_75618_Pennol_5L_1044400.png'},
+					{name: 'Pennol 10W40 B4 (1L)', oldPrice: '80 MAD', newPrice: '60 MAD', description: '', image: 'https://content2.rozetka.com.ua/goods/images/big/438820402.jpg'},
+					{name: 'Pennol 5W40 SN/CF (1L)', oldPrice: '90 MAD', newPrice: '70 MAD', description: '', image: 'img/Pennol5w40s.png'},
+					{name: 'Pennol 5W40 SN/CF (5L)', oldPrice: '400 MAD', newPrice: '350 MAD', description: '', image: 'https://strgimgr.umico.az/sized/840/392288-220fd12a36110fc11548c241f794d215.jpg'},
+					{name: 'Pennol 5W30 LL III (5L)', oldPrice: '550 MAD', newPrice: '450 MAD', description: '', image: 'https://file.euroauto.ru/v2/file/parts/new/5378798/1.jpg'},
+					{name: 'Pennol 5W30 LL III (1L)', oldPrice: '170 MAD', newPrice: '120 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.7LXssg_tIHs2HPt0O4udiAHaGQ?rs=1&pid=ImgDetMain'}
+					
+                ];
+            } else if (huile === 'huile2') {
+                products = [
+                    {name: 'Valvoline 5W40 (5L)', oldPrice: '450 MAD', newPrice: '400 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.Dtb7rxu2n1ublVEiU-z_TQHaHa?rs=1&pid=ImgDetMain' },
+					{name: 'Valvoline 5W40 (1L)', oldPrice: '$130 MAD', newPrice: '90 MAD', description: '', image: 'https://www.cruisespares.co.tz/wp-content/uploads/2020/11/Engine-Oil-VALVOLINE-5W40-1L.jpg' },
+					{name: 'Valvoline 10W40 (1L)', oldPrice: '120 MAD', newPrice: '70 MAD', description: '', image: 'https://autooleje.pl/pol_pl_Olej-silnikowy-Valvoline-ALL-Climate-Extra-10W-40-1L-4892_1.jpg'},
+					{name: 'Valvoline 10W40 (5L)', oldPrice: '300 MAD', newPrice: '250 MAD', description: '', image: 'https://www.motoyadak.com/wp-content/uploads/2023/11/Valvoline-Premium-Protection-10W40-SB-01.jpg'},
+					{name: 'Valvoline 5W30 c2/c3 (5L)', oldPrice: '450 MAD', newPrice: '400 MAD', description: '', image: 'https://static.wixstatic.com/media/6fe420_3881542af8e34239be656b1e4ea68971~mv2.png/v1/fill/w_520,h_520,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/6fe420_3881542af8e34239be656b1e4ea68971~mv2.png' },
+					{name: 'Valvoline 5W30 c2/c3 (1L)', oldPrice: '100 MAD', newPrice: '90 MAD', description: '', image: 'https://www.racinglubes.nl/16043-large_default/huile-moteur-valvoline-all-climate-c2c3-5w30.jpg' },
+					{name: 'Valvoline 5W30 c4 (5L)', oldPrice: '550 MAD', newPrice: '480 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.jp1Pw9VmTgSwuqRK-iN_UQHaHa?rs=1&pid=ImgDetMain' },
+					{name: 'Valvoline 5W30 c4 (1L)', oldPrice: '150 MAD', newPrice: '110 MAD', description: '', image: 'https://serviruta.cl/wp-content/uploads/2023/07/VALVOLINE-SYNPOWER-MST-C4-5W30-12-x-1-Lt.png' },
+					{name: 'Valvoline 5W30 LL III (5L)', oldPrice: '650 MAD', newPrice: '550 MAD', description: '', image: '' },
+					{name: 'Valvoline 5W30 LL III (1L)', oldPrice: '170 MAD', newPrice: '130 MAD', description: '', image: '' },
+					{name: 'Valvoline 0W30 XL III (5L)', oldPrice: '750 MAD', newPrice: '650 MAD', description: '', image: 'img/valvoline0w30xl35l.png' },
+					{name: 'Valvoline 0W30 XL III (1L)', oldPrice: '220 MAD', newPrice: '170 MAD', description: '', image: 'img/valvoline0w30xl31l.png' },
+					{name: 'Valvoline 0W20 HYBRID (5L)', oldPrice: '750 MAD', newPrice: '650 MAD', description: '', image: 'https://a.allegroimg.com/original/11999c/b550261845428243d1797336a2c7/VALVOLINE-HYBRID-C5-0W20-API-SN-SP-5L' },
+					{name: 'Valvoline 0W20 HYBRID (1L)', oldPrice: '220 MAD', newPrice: '170 MAD', description: '', image: 'img/valvoline0w20hybrid.png' },
+					{name: 'Valvoline 0W20 MST C5 (5L)', oldPrice: '850 MAD', newPrice: '750 MAD', description: '', image: '' },
+					{name: 'Valvoline 0W20 MST C5 (1L)', oldPrice: '230 MAD', newPrice: '180 MAD', description: '', image: 'https://motoroeldirekt.com/media/product/504/valvoline-synpower-mst-c5-0w20-1-liter-sw-258.jpeg' }
+					
+                ];
+				} else if (huile === 'huile3') {
+                products = [
+                    {name: 'Castrol 5W30 (5L)', oldPrice: '$650 MAD', newPrice: '550 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.dM6YucnpoRYLGxE83cExLAHaHa?rs=1&pid=ImgDetMain'},
+					{name: 'Castrol 5W30 (1L)', oldPrice: '200 MAD', newPrice: '130 MAD', description: '', image: 'https://lubricantes-online.com/74247-more_large/castrol-edge-5w30-m-1l.jpg'},
+                    {name: 'Castrol 10W40 (5L)', oldPrice: '400 MAD', newPrice: '300 MAD', description: '', image: 'https://s1.medias-norauto.pt/images_produits/4008177189111_1/900x900/oleo-de-motor-castrol-para-motores-a-gasolina-e-gasoleo-10w-40-a3-b4-4-l--2702189.jpg'},
+					{name: 'Castrol 10W40 (1L)', oldPrice: '140 MAD', newPrice: '100 MAD', description: '', image: 'https://th.bing.com/th/id/R.9459841dd18d5f56ad7b74d10821d691?rik=TFEMaqXAe7DJXg&pid=ImgRaw&r=0'}
+                ];
+				} else if (huile === 'huile4') {
+                products = [
+                  
+                    {name: 'Liqui Moly 5W-40 4100 (5L)', oldPrice: '550 MAD', newPrice: '450 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.gIh2y5LsE6FPufLisFctDQHaHa?rs=1&pid=ImgDetMain'},
+					{name: 'Liqui Moly 5W-40 4100 (1L)', oldPrice: '160 MAD', newPrice: '110 MAD', description: '', image: 'https://bestoils.pl/438-large_default/liqui-moly-4100-top-tec-5w40-1l.jpg'},
+					{name: 'Liqui Moly 10W-40 (5L)', oldPrice: '400 MAD', newPrice: '300 MAD', description: '', image: 'https://th.bing.com/th/id/R.be6d83aa8c07af24429b4a9bc12adda4?rik=1GQcu4wGwuZYNQ&pid=ImgRaw&r=0'},
+					{name: 'Liqui Moly 10W-40 (1L)', oldPrice: '150 MAD', newPrice: '100 MAD', description: '', image: 'https://www.europaparts.com/media/catalog/product/cache/abf26066ecd46d435ee2486b4a5aee03/l/m/lm2042.jpg'},
+                    {name: 'Liqui Moly 0W-30 LL III (5L)', oldPrice: '850 MAD', newPrice: '750 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.sUFOd994xHF6jILUTveBTgAAAA?rs=1&pid=ImgDetMain'},
+					{name: 'Liqui Moly 0W-30 LL III (1L)', oldPrice: '300 MAD', newPrice: '200 MAD', description: '', image: 'https://varahlutir-static.s3.amazonaws.com/thumbnails/img/products/21604_Top_Tec_4210_0W-30_1l.png.1000x1000_q85_upscale.png'},
+                    {name: 'Liqui Moly 5W-30 Longtime High Tech (5L)', oldPrice: '550 MAD', newPrice: '450 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.nzyji-_SVYY7EvXZAj6TcwHaIE?rs=1&pid=ImgDetMain'},
+					{name: 'Liqui Moly 5W-30 Longtime High Tech (1L)', oldPrice: '160 MAD', newPrice: '120 MAD', description: '', image: 'https://motoroeldirekt.com/media/product/664/liqui-moly-1136-longtime-high-tech-5w-30-motoroel-1l-a8b.jpg'},
+					{name: 'Liqui Moly 5W-30 LL III (5L)', oldPrice: '750 MAD', newPrice: '650 MAD', description: '', image: 'https://www.motoroeldirekt.at/media/catalog/product/cache/2/image/800x/602f0fa2c1f0d1ba5e241f914e856ff9/pim/20647_1589966225464_ctx-1.png'},
+					{name: 'Liqui Moly 5W-30 LL III (1L)', oldPrice: '190 MAD', newPrice: '140 MAD', description: '', image: 'https://th.bing.com/th/id/R.e2068dc0af4766ef83371cd938b231c6?rik=aV1ckpdNA6a0FA&pid=ImgRaw&r=0'}
+                ];
+				} else if (huile === 'huile6') {
+                products = [
+                    {name: 'Master 0W-20 (5L)', oldPrice: '700 MAD', newPrice: '600 MAD', description: '', image: 'https://lubricantes-online.com/234554-large_default/repsol-master-eco-vcc-0w20-5l.jpg'},
+					{name: 'Master 0W-20 (1L)', oldPrice: '170 MAD', newPrice: '140 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.4UBYgJ_KSMToRj01D1qJmwHaHa?rs=1&pid=ImgDetMain'},
+                    {name: 'Elite 10W-40 (5L)', oldPrice: '340 MAD', newPrice: '280 MAD', description: '', image: 'https://maslaifiltri.bg/wp-content/uploads/2023/12/i_e-multitech-10w40-5l.jpeg'},
+					{name: 'Elite 10W-40 (1L)', oldPrice: '110 MAD', newPrice: '80 MAD', description: '', image: 'https://qa-es.repsol.com/content/dam/repsol-ecommerce/tienda/productos/a/aceite-elite-multivalvulas-10w40/aceite-elite-multivalvulas-10w40-001.jpg'},
+                    {name: 'Elite 5W-40 (5L)', oldPrice: '500 MAD', newPrice: '400 MAD', description: '', image: 'https://lubricantes-online.com/254457-more_large/repsol-elite-evolution-sae-5w-40.jpg'},
+					{name: 'Elite 5W-40 (1L)', oldPrice: '140 MAD', newPrice: '100 MAD', description: '', image: 'https://s1.medias-norauto.es/images_produits/2399155/900x900/aceite-motor-repsol-elite-competicion-5w40-diesel-y-gasolina-1l--2399155.jpg'},
+					{name: 'Driver 10W-40 (5L)', oldPrice: '350 MAD', newPrice: '250 MAD', description: '', image: 'https://azoil.pt/1811-large_default/repsol-driver-speed-synth-10w40.jpg'},
+					{name: 'Driver 10W-40 (1L)', oldPrice: '110 MAD', newPrice: '70 MAD', description: '', image: 'https://down-ph.img.susercontent.com/file/e2b143f5e7f1808c3640b779b98f10e3'},
+					{name: 'Leader 5W-30 c3 (5L)', oldPrice: '500 MAD', newPrice: '400 MAD', description: '', image: 'https://media.totcar.com/product/aceite-repsol-premium-tech-5w30-5-ltr-800x800_yrEOaUa.jpg'},
+					{name: 'Leader 5W-30 c3 (1L)', oldPrice: '150 MAD', newPrice: '110 MAD', description: '', image: 'https://motex.bg/image/cache/catalog/newmotex/Photos/Products/Repsol/Maslo-REPSOL-LEADER-AUTOGAS-5W-30-1L-800x600h.jpg'},
+					{name: 'Master 0W-30 (5L)', oldPrice: '750 MAD', newPrice: '650 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.j6GB2PqjjDDqaeP4g8gB1QHaHa?rs=1&pid=ImgDetMain'},
+					{name: 'Master 0W-30 (1L)', oldPrice: '200 MAD', newPrice: '150 MAD', description: '', image: 'https://th.bing.com/th/id/OIP.Wct6yYiEvuH13Q1aNmqUsAHaHa?rs=1&pid=ImgDetMain'}
+					
+                ];
+            }
+
+            // Update the product list with the selected huile's products
+            const productList = document.getElementById('product-list-huiles');
+            productList.innerHTML = ''; // Clear previous products
+
+            products.forEach(product => {
+                productList.innerHTML += `
+                    <div class="product-item">
+    <img src="${product.image}" alt="${product.name}">
+    <div class="product-details">
+        <h3>${product.name}</h3>
+        <p class="old-price">Prix ancien: ${product.oldPrice}</p>
+        <p class="new-price">Prix promo: ${product.newPrice}</p>
+        <p class="description">${product.description}</p>
+        <a href="https://wa.me/+212668552423?text=Bonjour%2C%20je%20souhaite%20commander%20${encodeURIComponent(product.name)}" class="green-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
+            Commander Maintenant
+        </a>
+    </div>
+</div>
+
+
+                `;
+            });
+        }
+    </script>
+</body>
+</html>

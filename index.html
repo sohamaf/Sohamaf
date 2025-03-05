@@ -8,6 +8,27 @@
 
     <!-- Favicon (Logo in the browser tab) -->
     <link rel="icon" href="img/logo.png" type="image/png">
+
+    <!-- Meta Description -->
+    <meta name="description" content="Vente de batteries, huiles, pièces détachées pour voitures, et accessoires automobiles. Achetez des pièces de rechange automobiles et accessoires de qualité à des prix compétitifs sur Sohamaf.">
+
+    <!-- Meta Keywords (French) -->
+    <meta name="keywords" content="Sohamaf, batteries de voiture, huiles moteur, pièces détachées voiture, accessoires automobile, pièces de rechange, batterie voiture, entretien voiture, huile moteur, pièces auto, vente de pièces automobiles, pièces de rechange automobile, batterie de voiture pas cher, accessoires voiture en ligne, pièces de moteur automobile, pièces de remplacement, pièces auto en ligne, réparations auto, accessoires voiture, acheter pièces auto en ligne, produits automobiles, pièces voitures haut de gamme, entretien de véhicule, réparation de voiture, service automobile, qualité pièces automobile">
+
+    <!-- Meta Description (English) -->
+    <meta name="description" content="Sohamaf online store for car batteries, motor oils, spare parts, and auto accessories. Buy quality car parts and accessories at competitive prices.">
+
+    <!-- Meta Keywords (English) -->
+    <meta name="keywords" content="Sohamaf, car batteries, motor oils, car parts, auto accessories, spare parts, car battery, car maintenance, engine oil, auto parts, automotive spare parts, car replacement parts, best car batteries, online car parts store, auto repair parts, high-quality car parts, automotive repair, car care products, online auto accessories, replacement auto parts, buy car parts online, auto repair services, quality car parts, car engine parts, best motor oils">
+
+    <!-- Meta Description (Arabic) -->
+    <meta name="description" content="سوهاماف متجر إلكتروني لبيع بطاريات السيارات، والزيوت، وقطع الغيار، وإكسسوارات السيارات. اشترِ قطع غيار السيارات والإكسسوارات عالية الجودة بأسعار تنافسية.">
+
+    <!-- Meta Keywords (Arabic) -->
+    <meta name="keywords" content="سوهاماف, بطاريات السيارات, زيوت المحرك, قطع غيار السيارات, إكسسوارات السيارات, قطع غيار, صيانة السيارات, زيت المحرك, قطع السيارات, بيع قطع غيار السيارات, قطع غيار السيارات الأصلية, قطع غيار السيارات عالية الجودة, أفضل بطاريات السيارات, متجر قطع غيار السيارات, قطع غيار السيارات بأسعار تنافسية, قطع غيار السيارات عبر الإنترنت, أدوات صيانة السيارات, بيع قطع غيار السيارات عبر الإنترنت, منتجات السيارات, قطع غيار المحرك, سيارات, إكسسوارات السيارات عبر الإنترنت, قطع غيار السيارة الفاخرة">
+
+</head>
+<body>
     <style>
         /* Global Styles */
         * {
@@ -250,25 +271,42 @@
         }
 
         /* About Section */
-        .about {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #f8f8f8;
-        }
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8; /* Light background for light mode */
+}
 
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-family: 'Source Serif Pro', serif;
-        }
 
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            font-weight: 400;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+
+/* Dark mode styling for About Section */
+@media (prefers-color-scheme: dark) {
+    .about {
+        background-color: #333; /* Dark background for dark mode */
+    }
+
+    .about h2,
+    .about p {
+        color: #fff; /* White text for both h2 and p in dark mode */
+    }
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Source Serif Pro', serif;
+    color: #333; /* Default text color for light mode */
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #444; /* Default text color for light mode */
+}
+
 
         /* Footer */
         footer {
@@ -390,36 +428,31 @@ body.dark-mode p {
     color: #333 !important; /* Ensures the text stays black in dark mode */
 }
 
-.footer-content {
-        text-align: center;
-        padding: 20px;
-    }
 
-    .footer-content ul {
-        list-style-type: none;
-        padding: 0;
-    }
+footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .footer-content ul li {
-        display: inline;
-        margin: 0 10px;
-    }
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
 
-    .footer-content a {
-        text-decoration: none;
-        color: #000;
-    }
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        footer ul li a:hover {
+            color: #FFD700;
+        }
 
     .qr-codes {
-        margin-top: 20px;
-    }
-
-    .qr-code {
-        width: 80px; /* Adjust QR code size */
-        margin: 0 10px;
-    }
-	
-	.qr-codes {
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;  /* Space out the QR codes evenly */
     align-items: center;           /* Align items vertically in the center */
@@ -441,19 +474,49 @@ body.dark-mode p {
     margin-bottom: 10px;          /* Add space between the QR code and the text */
 }
 
+.app-info {
+    display: flex;
+    align-items: center;         /* Align logo and text horizontally */
+    justify-content: center;     /* Center the logo and text */
+    gap: 10px;                   /* Add space between the logo and the text */
+}
+
 .app-logo {
     width: 40px;                  /* Control the size of the app logo */
     height: 40px;                 /* Control the size of the app logo */
-    margin-bottom: 5px;           /* Add space between the logo and text */
 }
 
-.app-info p {
+.app-description {
     font-size: 1rem;              /* Set font size for the app name */
     font-weight: 500;             /* Optional: make the app name bold */
     color: #333;                  /* Default color for the text */
+    margin: 0;                    /* Remove any extra margin */
+}
+
+/* Optional: Make the text inside .app-description white if needed */
+.app-description {
+    color: white !important; /* Make text white */
+    font-size: 16px; /* Adjust the font size if needed */
+    text-align: center !important; /* Optional, if you want to center the text */
+    margin-top: 1px !important; /* Optional, to add some space above the text */
 }
 
 
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212; /* Example dark background */
+    color: white; /* Default text color in dark mode */
+}
+
+/* Ensuring p tags remain white even in dark mode */
+p1 {
+    color: white !important; /* Force p tags to always be white */
+}
+
+/* Specific override for dark mode to ensure no overrides */
+body.dark-mode p1 {
+    color: white !important; /* Ensure p text stays white in dark mode */
+}
     </style>
 </head>
 <body>
@@ -471,7 +534,7 @@ body.dark-mode p {
         <nav>
             <ul>
                 <li><a href="Batterie.html">Boutique</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contactez-Nous</a></li>
             </ul>
         </nav>
     </header>
@@ -494,77 +557,82 @@ body.dark-mode p {
     <section class="packs" id="packs">
         <!-- Pack 1 -->
         <div class="pack">
-            <div class="new-badge">New</div>
-        <div class="image-container">
-            <img src="img/Pack1.jpg" alt="Pack 1 Image">
-        </div>
+    <div class="new-badge">New</div>
+    <div class="image-container">
+        <img src="img/Pack1.jpg" alt="Pack 1 Image">
+    </div>
 
-            <h3>Pack Vidange (1,5 L)</h3>
-            <p>Pack Vidange Premium pour [Opel, Toyota, Citroen, Peugeot] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
-            <div class="price">
-                <span class="regular-price">1000 MAD</span>
-                <span class="promo-price">799 MAD</span>
-            </div>
-            <a href="#" class="green-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
-    Commander Maintenant
-</a>
+    <h3>Pack Vidange (1,5 L)</h3>
+    <p>Pack Vidange Premium pour [Opel, Toyota, Citroen, Peugeot] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
+    <div class="price">
+        <span class="regular-price">1000 MAD</span>
+        <span class="promo-price">799 MAD</span>
+    </div>
+    <a href="https://wa.me/+212668552423?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Vidange%20%281%2C5%20L%29%20pour%20Opel%2C%20Toyota%2C%20Citroen%2C%20Peugeot" class="green-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
+        Commander Maintenant
+    </a>
+</div>
 
-        </div>
+
 
         <!-- Pack 2 -->
         <div class="pack">
-            <div class="new-badge">New</div>
-        <div class="image-container">
-            <img src="img/Pack2.jpg" alt="Pack 1 Image">
-        </div>
-            <h3>Pack Vidange (2 L)</h3>
-            <p>Pack Vidange Premium pour [Opel, Toyota, Citroen, Peugeot] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
-            <div class="price">
-                <span class="regular-price">1000 MAD</span>
-                <span class="promo-price">799 MAD</span>
-            </div>
-            <a href="#" class="green-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
-    Commander Maintenant
-</a>
-        </div>
+    <div class="new-badge">New</div>
+    <div class="image-container">
+        <img src="img/Pack2.jpg" alt="Pack 1 Image">
+    </div>
+    <h3>Pack Vidange (2 L)</h3>
+    <p>Pack Vidange Premium pour [Opel, Toyota, Citroen, Peugeot] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
+    <div class="price">
+        <span class="regular-price">1000 MAD</span>
+        <span class="promo-price">799 MAD</span>
+    </div>
+    <a href="https://wa.me/+212668552423?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Vidange%20%282%20L%29%20pour%20Opel%2C%20Toyota%2C%20Citroen%2C%20Peugeot" class="green-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
+        Commander Maintenant
+    </a>
+</div>
+
+
 
         <!-- Pack 3 -->
         <div class="pack">
-            <div class="new-badge">New</div>
-        <div class="image-container">
-            <img src="img/Pack3.jpg" alt="Pack 1 Image">
-        </div>
-            <h3>Pack Vidange (Talisman, Megane)</h3>
-            <p>Pack Vidange Premium pour [Reunault] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
-            <div class="price">
-                <span class="regular-price">1000 MAD</span>
-                <span class="promo-price">799 MAD</span>
-            </div>
-            <a href="#" class="green-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
-    Commander Maintenant
-</a>
-        </div>
+    <div class="new-badge">New</div>
+    <div class="image-container">
+        <img src="img/Pack3.jpg" alt="Pack 1 Image">
+    </div>
+    <h3>Pack Vidange (Talisman, Megane)</h3>
+    <p>Pack Vidange Premium pour [Reunault] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
+    <div class="price">
+        <span class="regular-price">1000 MAD</span>
+        <span class="promo-price">799 MAD</span>
+    </div>
+    <a href="https://wa.me/+212668552423?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Vidange%20%28Talisman%2C%20Megane%29" class="green-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
+        Commander Maintenant
+    </a>
+</div>
+
 		
 		<!-- Pack 4 -->
         <div class="pack">
-            <div class="new-badge">New</div>
-        <div class="image-container">
-            <img src="img/Pack4.jpg" alt="Pack 1 Image">
-        </div>
-            <h3>Pack Vidange (B.M.W, Mini)</h3>
-            <p>Pack Vidange Premium pour [B.M.W, Mini] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
-            <div class="price">
-                <span class="regular-price">1000 MAD</span>
-                <span class="promo-price">799 MAD</span>
-            </div>
-            <a href="#" class="green-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
-    Commander Maintenant
-</a>
-        </div>
+    <div class="new-badge">New</div>
+    <div class="image-container">
+        <img src="img/Pack4.jpg" alt="Pack 1 Image">
+    </div>
+    <h3>Pack Vidange (B.M.W, Mini)</h3>
+    <p>Pack Vidange Premium pour [B.M.W, Mini] : une solution complète avec filtres, bouchons, joints et huile moteur de haute qualité pour garantir la performance et la longévité de votre véhicule.</p>
+    <div class="price">
+        <span class="regular-price">1000 MAD</span>
+        <span class="promo-price">799 MAD</span>
+    </div>
+    <a href="https://wa.me/+212668552423?text=Bonjour%2C%20je%20souhaite%20commander%20le%20Pack%20Vidange%20%28B.M.W%2C%20Mini%29" class="green-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
+        Commander Maintenant
+    </a>
+</div>
+
     </section>
 
     <!-- About Section -->
@@ -576,41 +644,42 @@ body.dark-mode p {
     <!-- Footer Section -->
     <footer>
         <div class="footer-content">
-        <p>&copy; 2025 Sohamaf. Tous droits réservés.</p>
-        <p>Suivez-nous sur :</p>
+        <p1>&copy; 2025 Sohamaf. Tous droits réservés.</p1>
+		<p1>Réalisée par Hatim Morchid.</p1>
+        <p1>Contactez-nous sur :</p1>
         <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
+            <li><a href="https://wa.me/212668552423" target="_blank">WhatsApp</a></li>
+            <li><a href="mailto:contact.sohamaf@gmail.com">E-mail</a></li>
+            <li><a href="https://www.instagram.com/soha_maf/">Instagram</a></li>
         </ul>
-        <p>Scannez nos QR codes :</p>
+        <p1>Scannez nos QR codes :</p1>
         <div class="qr-codes">
     <!-- QR Code for Localisation -->
-    <a href="https://your-localisation-app-link.com" target="_blank" class="qr-item">
-        <img src="img/Qr-Local.jpg" alt="Localisation" class="qr-code">
-        <div class="app-info">
-            <img src="https://clipground.com/images/pin-logo-png-5.png" alt="Localisation Logo" class="app-logo">
-            <p>Localisation App</p>
-        </div>
-    </a>
+<a href="https://www.google.com/maps/place/SOHAMAF+pi%C3%A8ce+auto/@34.0293231,-4.9949407,17z/data=!3m1!4b1!4m6!3m5!1s0xd9f8b007c7608b3:0xf4789012fcc10825!8m2!3d34.0293187!4d-4.9923604!16s%2Fg%2F11wbkmpww0?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="qr-item">
+    <img src="img/Qr-Local.jpg" alt="Localisation" class="qr-code">
+    <div class="app-info">
+        <img src="https://clipground.com/images/pin-logo-png-5.png" alt="Localisation Logo" class="app-logo">
+        <p1 class="app-description">Localisation App</p1>
+    </div>
+</a>
 
-    <!-- QR Code for Instagram -->
-    <a href="https://www.instagram.com/your-username" target="_blank" class="qr-item">
-        <img src="img/Qr-insta.jpg" alt="Instagram" class="qr-code">
-        <div class="app-info">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" class="app-logo">
-            <p>Instagram</p>
-        </div>
-    </a>
+<!-- QR Code for Instagram -->
+<a href="https://www.instagram.com/soha_maf/" target="_blank" class="qr-item">
+    <img src="img/Qr-insta.jpg" alt="Instagram" class="qr-code">
+    <div class="app-info">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" class="app-logo">
+        <p1 class="app-description">Instagram</p1>
+    </div>
+</a>
 
-    <!-- QR Code for WhatsApp -->
-    <a href="https://wa.me/your-number" target="_blank" class="qr-item">
-        <img src="img/Qr-watssap.jpg" alt="WhatsApp" class="qr-code">
-        <div class="app-info">
-            <img src="https://static.vecteezy.com/system/resources/previews/012/162/809/original/whatsapp-logo-3d-render-free-png.png" alt="WhatsApp Logo" class="app-logo">
-            <p>WhatsApp</p>
-        </div>
-    </a>
+<!-- QR Code for WhatsApp -->
+<a href="https://wa.me/212668552423" target="_blank" class="qr-item">
+    <img src="img/Qr-watssap.jpg" alt="WhatsApp" class="qr-code">
+    <div class="app-info">
+        <img src="https://static.vecteezy.com/system/resources/previews/012/162/809/original/whatsapp-logo-3d-render-free-png.png" alt="WhatsApp Logo" class="app-logo">
+        <p1 class="app-description">WhatsApp</p1>
+    </div>
+</a>
 </div>
 
 
@@ -625,14 +694,6 @@ body.dark-mode p {
     </script>
 	<script>
   document.addEventListener("DOMContentLoaded", function() {
-    const sheetId = '1gdPK2U8ULsRZjwly4svWSyjNtX8Lt01FwbhfFgY7pPs';  // Replace this with your Google Sheet ID
-    const apiKey = 'AKfycbzClIMn3EPwDzZu-sllHkkPlcE6zbkth2gnFMGEg-d6gz-v1SQrzL7YjeJXQD0ASUE';  // Replace this with your API Key
-    const sheetUrl = `https://cors-anywhere.herokuapp.com/https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/SOHAMAF?key=${apiKey}`;  // Corrected URL for your sheet
-
-    fetch(sheetUrl)
-      .then(response => response.json())
-      .then(data => {
-        let productsContainer = document.querySelector('.packs');
         
         // Clear existing products
         productsContainer.innerHTML = '';
@@ -666,7 +727,6 @@ body.dark-mode p {
           productsContainer.appendChild(productElement);
         }
       })
-      .catch(error => console.error('Error fetching data:', error));
   });
 </script>
 

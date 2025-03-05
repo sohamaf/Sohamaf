@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohamaf - Marché des Pièces D'auto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (Logo in the browser tab) -->
+    <link rel="icon" href="img/logo.png" type="image/png">
+
+    <!-- Meta Description -->
+    <meta name="description" content="Vente de batteries, huiles, pièces détachées pour voitures, et accessoires automobiles. Achetez des pièces de rechange automobiles et accessoires de qualité à des prix compétitifs sur Sohamaf.">
+
+    <!-- Meta Keywords (French) -->
+    <meta name="keywords" content="Sohamaf, batteries de voiture, huiles moteur, pièces détachées voiture, accessoires automobile, pièces de rechange, batterie voiture, entretien voiture, huile moteur, pièces auto, vente de pièces automobiles, pièces de rechange automobile, batterie de voiture pas cher, accessoires voiture en ligne, pièces de moteur automobile, pièces de remplacement, pièces auto en ligne, réparations auto, accessoires voiture, acheter pièces auto en ligne, produits automobiles, pièces voitures haut de gamme, entretien de véhicule, réparation de voiture, service automobile, qualité pièces automobile">
+
+    <!-- Meta Description (English) -->
+    <meta name="description" content="Sohamaf online store for car batteries, motor oils, spare parts, and auto accessories. Buy quality car parts and accessories at competitive prices.">
+
+    <!-- Meta Keywords (English) -->
+    <meta name="keywords" content="Sohamaf, car batteries, motor oils, car parts, auto accessories, spare parts, car battery, car maintenance, engine oil, auto parts, automotive spare parts, car replacement parts, best car batteries, online car parts store, auto repair parts, high-quality car parts, automotive repair, car care products, online auto accessories, replacement auto parts, buy car parts online, auto repair services, quality car parts, car engine parts, best motor oils">
+
+    <!-- Meta Description (Arabic) -->
+    <meta name="description" content="سوهاماف متجر إلكتروني لبيع بطاريات السيارات، والزيوت، وقطع الغيار، وإكسسوارات السيارات. اشترِ قطع غيار السيارات والإكسسوارات عالية الجودة بأسعار تنافسية.">
+
+    <!-- Meta Keywords (Arabic) -->
+    <meta name="keywords" content="سوهاماف, بطاريات السيارات, زيوت المحرك, قطع غيار السيارات, إكسسوارات السيارات, قطع غيار, صيانة السيارات, زيت المحرك, قطع السيارات, بيع قطع غيار السيارات, قطع غيار السيارات الأصلية, قطع غيار السيارات عالية الجودة, أفضل بطاريات السيارات, متجر قطع غيار السيارات, قطع غيار السيارات بأسعار تنافسية, قطع غيار السيارات عبر الإنترنت, أدوات صيانة السيارات, بيع قطع غيار السيارات عبر الإنترنت, منتجات السيارات, قطع غيار المحرك, سيارات, إكسسوارات السيارات عبر الإنترنت, قطع غيار السيارة الفاخرة">
+
+</head>
+<body>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .brand-button img {
+            width: 80px; /* Adjust this value to control the size */
+            height: auto; /* Maintain the aspect ratio */
+            border-radius: 10px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #1f1f1f;
+            color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo h1 {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 2rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #FFA500;
+        }
+
+        /* Categories Bar */
+        .categories-bar {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f8f8f8;
+        }
+
+        .categories-bar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 15px;
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: 2px solid #FFA500;
+            background-color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .categories-bar a:hover {
+            background-color: #FFA500;
+            color: white;
+        }
+
+        /* Category Buttons */
+        .category-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .category-button {
+            background-color: #FFA500;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2b2b2b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .category-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+            background-color: #ff6a00;
+        }
+
+        /* Brand Buttons (Hidden initially) */
+        .brand-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .brand-button {
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .brand-button:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        /* Products Section */
+        .products {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .products h2 {
+            font-size: 2.5rem;
+            font-family: 'Source Serif Pro', serif;
+            margin-bottom: 30px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            width: 280px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-item p {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .product-item .old-price {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .product-item .new-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #228B22;
+        }
+
+        .product-item .description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-item a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #FFA500;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-item a:hover {
+            background-color: #ff6a00;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        footer ul li a:hover {
+            color: #FFA500;
+        }
+
+        /* Dark/Light Mode Toggle */
+        .dark-light-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #FFA500;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dark-light-toggle:hover {
+            background-color: #ff6a00;
+        }
+
+        /* Back Button */
+        .back-button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 30px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .back-button:hover {
+            background-color: #ff6a00;
+            transform: scale(1.05);
+        }
+
+        .back-button svg {
+            margin-right: 10px;
+        }
+		
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1f1f1f;
+    color: #f4f4f4;
+}
+
+/* Ensure h3 and p inside .dark-mode are black */
+body.dark-mode h3,
+body.dark-mode p {
+    color: #333 !important; /* Ensures the text stays black in dark mode */
+}
+
+.qr-codes {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;  /* Space out the QR codes evenly */
+    align-items: center;           /* Align items vertically in the center */
+    gap: 20px;                     /* Optional: space between the QR codes */
+    margin-top: 40px;              /* Optional: add some top margin */
+}
+
+.qr-item {
+    text-align: center;           /* Center align the content inside each item */
+    display: flex;
+    flex-direction: column;       /* Stack the QR code and text vertically */
+    align-items: center;          /* Center-align the items */
+    text-decoration: none;        /* Remove the underline from the link */
+}
+
+.qr-code {
+    width: 120px;                 /* Control the size of the QR code */
+    height: 120px;                /* Control the size of the QR code */
+    margin-bottom: 10px;          /* Add space between the QR code and the text */
+}
+
+.app-info {
+    display: flex;
+    align-items: center;         /* Align logo and text horizontally */
+    justify-content: center;     /* Center the logo and text */
+    gap: 10px;                   /* Add space between the logo and the text */
+}
+
+.app-logo {
+    width: 40px;                  /* Control the size of the app logo */
+    height: 40px;                 /* Control the size of the app logo */
+}
+
+.app-description {
+    font-size: 1rem;              /* Set font size for the app name */
+    font-weight: 500;             /* Optional: make the app name bold */
+    color: #333;                  /* Default color for the text */
+    margin: 0;                    /* Remove any extra margin */
+}
+
+/* Optional: Make the text inside .app-description white if needed */
+.app-description {
+    color: white !important; /* Make text white */
+    font-size: 16px; /* Adjust the font size if needed */
+    text-align: center !important; /* Optional, if you want to center the text */
+    margin-top: 1px !important; /* Optional, to add some space above the text */
+}
+
+.app-logo {
+    width: 40px;                  /* Control the size of the app logo */
+    height: 40px;                 /* Control the size of the app logo */
+    margin-bottom: 5px;           /* Add space between the logo and text */
+}
+
+.app-info p {
+    font-size: 1rem;              /* Set font size for the app name */
+    font-weight: 500;             /* Optional: make the app name bold */
+    color: #333;                  /* Default color for the text */
+}
+
+.green-btn {
+    background-color: #25D366; /* WhatsApp green color */
+    color: white; /* Text color */
+    padding: 2px 15px !important; /* Padding to adjust button size */
+    text-decoration: none; /* Remove underline */
+    display: inline-flex !important; /* Flexbox to align icon and text */
+    align-items: center; /* Vertically center the items */
+    font-weight: bold; /* Make the text bold */
+    border-radius: 5px; /* Optional: Rounded corners */
+    text-align: center; /* Center the text */
+    white-space: nowrap; /* Prevent the text from wrapping to the next line */
+}
+
+.whatsapp-icon {
+    width: 30px !important; /* Adjust the icon size */
+    height: auto !important; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.green-btn:hover {
+    background-color: #FF7F00; /* Orange color when mouse hovers */
+}
+
+.green-btn:active {
+    background-color: #128C7E; /* Darker shade when clicked */
+}
+
+/* Make logo clickable and remove link styling */
+        .logo-link {
+            text-decoration: none; /* Remove underline */
+            color: white; /* Keep the text color white */
+        }
+
+        .logo-link:hover {
+            color: #FFD700; /* Optional: Change color on hover */
+        }
+		
+		.app-description {
+        color: white !important; /* Make text white */
+        font-size: 16px; /* Adjust the font size if needed */
+        text-align: center !important; /* Optional, if you want to center the text */
+        margin-top: 1px !important; /* Optional, to add some space above the text */
+    }
+	
+	.product-item {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center all content */
+    text-align: center; /* Center text */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 300px; /* Set a fixed width for the product */
+    margin: 0 auto; /* Center the product-item within the container */
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Ensure the image does not get too large */
+    margin-bottom: 15px;
+}
+
+h3, .old-price, .new-price, .description {
+    margin: 10px 0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212; /* Example dark background */
+    color: white; /* Default text color in dark mode */
+}
+
+/* Ensuring p tags remain white even in dark mode */
+p1 {
+    color: white !important; /* Force p tags to always be white */
+}
+
+/* Specific override for dark mode to ensure no overrides */
+body.dark-mode p1 {
+    color: white !important; /* Ensure p text stays white in dark mode */
+}
+
+/* Section Styling */
+#autre-piece {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+/* Coming Soon Container */
+.coming-soon-container {
+    background-color: #FFA500;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.coming-soon-container h2 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.coming-soon-description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f1f1f1;
+    margin-top: 10px;
+}
+
+/* Product List (if any) */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+/* Optional: Add some styling to product items */
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.product-item .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #228B22;
+}
+
+/* Enhance background color and layout in dark mode */
+body.dark-mode #autre-piece {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .coming-soon-container {
+    background-color: #FF6A00;
+}
+
+body.dark-mode .coming-soon-container h2 {
+    color: #f1f1f1;
+}
+
+body.dark-mode .coming-soon-description {
+    color: #f8f8f8;
+}
+
+body.dark-mode .product-item {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .product-item h3, 
+body.dark-mode .product-item p {
+    color: #f4f4f4;
+}
+
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Darker green for hover */
+}
+
+.whatsapp-button img {
+    margin-right: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Dark/Light Mode Toggle -->
+    <button class="dark-light-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <h1>Sohamaf</h1>
+                <p1>Pièces D'auto Premium</p1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Boutique</a></li>
+                
+                <li><a href="contact.html">Contactez-Nous</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Categories Bar -->
+    <section class="categories-bar">
+        <a href="index.html">Packs</a>
+        <a href="batterie.html">Batterie</a>
+        <a href="huiles.html">Huiles</a>
+        <a href="#">Pièce</a>
+    </section>
+
+    <!-- Product Buttons -->
+   
+
+    <!-- Brand Buttons (Hidden initially) -->
+    <section class="brand-buttons" id="brand-buttons-container" style="display: none;">
+        <div class="back-button" onclick="backToProducts()">Retour</div>
+        <div class="brand-button" onclick="showPieces('brand1')"><img src="${product.image}" alt="Brand 1"></div>
+        <div class="brand-button" onclick="showPieces('brand2')"><img src="${product.image}" alt="Brand 2"></div>
+        <div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 3"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 4"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 5"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 6"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 7"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 8"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 9"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 10"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 11"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 12"></div>
+		<div class="brand-button" onclick="showPieces('brand3')"><img src="${product.image}" alt="Brand 13"></div>
+    </section>
+	
+
+    <!-- Products Section for Autre Pièce -->
+    <section class="products" id="autre-piece">
+    <div class="coming-soon-container">
+        <h2>Bientôt disponible, restez connectés.</h2>
+        
+		<p class="coming-soon-description">Pour chaque commande de pièces, n'hésitez pas à nous envoyer votre numéro de carte grise sous le numéro suivant !</p>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/+212668552423" class="whatsapp-button" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" style="width: 30px; height: 30px;">
+    Contacter-Nous via WhatsApp
+</a>
+
+    </div>
+    <div class="product-list" id="product-list-piece">
+        <!-- Products will be dynamically updated here -->
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p1>&copy; 2025 Sohamaf. Tous droits réservés.</p1>
+			<p1>Réalisée par Hatim Morchid.</p1>
+            <p1>Contactez-nous sur :</p1>
+        <ul>
+            <li><a href="https://wa.me/212668552423" target="_blank">WhatsApp</a></li>
+            <li><a href="mailto:contact.sohamaf@gmail.com">E-mail</a></li>
+            <li><a href="https://www.instagram.com/soha_maf/">Instagram</a></li>
+        </ul>
+			<p1>Scannez nos QR codes :</p1>
+        <div class="qr-codes">
+    <!-- QR Code for Localisation -->
+<a href="https://www.google.com/maps/place/SOHAMAF+pi%C3%A8ce+auto/@34.0293231,-4.9949407,17z/data=!3m1!4b1!4m6!3m5!1s0xd9f8b007c7608b3:0xf4789012fcc10825!8m2!3d34.0293187!4d-4.9923604!16s%2Fg%2F11wbkmpww0?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="qr-item">
+    <img src="img/Qr-Local.jpg" alt="Localisation" class="qr-code">
+    <div class="app-info">
+        <img src="https://clipground.com/images/pin-logo-png-5.png" alt="Localisation Logo" class="app-logo">
+        <p1 class="app-description">Localisation App</p1>
+    </div>
+</a>
+
+<!-- QR Code for Instagram -->
+<a href="https://www.instagram.com/soha_maf/" target="_blank" class="qr-item">
+    <img src="img/Qr-insta.jpg" alt="Instagram" class="qr-code">
+    <div class="app-info">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" class="app-logo">
+        <p1 class="app-description">Instagram</p1>
+    </div>
+</a>
+
+<!-- QR Code for WhatsApp -->
+<a href="https://wa.me/212668552423" target="_blank" class="qr-item">
+    <img src="img/Qr-watssap.jpg" alt="WhatsApp" class="qr-code">
+    <div class="app-info">
+        <img src="https://static.vecteezy.com/system/resources/previews/012/162/809/original/whatsapp-logo-3d-render-free-png.png" alt="WhatsApp Logo" class="app-logo">
+        <p1 class="app-description">WhatsApp</p1>
+    </div>
+</a>
+</div>
+        </div>
+    </footer>
+	
+	<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        // Toggle icon between dark and light mode
+        const icon = document.querySelector('.dark-light-toggle');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.textContent = "🌞";  // Sun icon for light mode
+        } else {
+            icon.textContent = "🌙";  // Moon icon for dark mode
+        }
+    }
+</script>
+
+
+    <!-- Dark/Light Mode Script -->
+ 
+
+
+
+    </script>
+</body>
+</html>
