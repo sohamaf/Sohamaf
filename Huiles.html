@@ -30,281 +30,285 @@
 </head>
 <body>
     <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        /* Dark Mode */
-        body.dark-mode {
-            background-color: #1f1f1f;
-            color: #f4f4f4;
-        }
-
-        /* Header */
-        header {
-            background-color: #2b2b2b;
-            color: white;
-            padding: 10px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header .logo h1 {
-            font-family: 'Source Serif Pro', serif;
-            font-size: 2rem;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
-
-        /* Categories Bar */
-        .categories-bar {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #f8f8f8;
-        }
-
-        .categories-bar a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 0 15px;
-            padding: 12px 30px;
-            border-radius: 30px;
-            border: 2px solid #FFD700;
-            background-color: white;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .categories-bar a:hover {
-            background-color: #FFD700;
-            color: white;
-        }
-
-        /* Category Buttons (New Section for Buttons Under Categories) */
-        .category-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .category-button {
-            background-color: #f1f1f1;
-            border-radius: 15px;
-            width: 100px;
-            height: 100px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;  /* Make the button clickable */
-            transition: transform 0.3s ease, opacity 0.3s ease;  /* Add smooth transition effects */
-        }
-
-        .category-button:hover {
-            transform: scale(1.05);  /* Slightly enlarge the button when hovered */
-            opacity: 0.8;  /* Optional: Add opacity change when hovering for a more interactive feel */
-        }
-
-        .category-button img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        /* Product Listings Section */
-        .products {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .products h2 {
-            font-size: 2.5rem;
-            font-family: 'Source Serif Pro', serif;
-            margin-bottom: 30px;
-        }
-
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            justify-items: center;
-        }
-
-        .product-item {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            width: 280px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .product-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .product-item p {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .product-item .old-price {
-            text-decoration: line-through;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        .product-item .new-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #228B22;
-        }
-
-        .product-item .description {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-
-        .product-item a {
-            text-decoration: none;
-            color: #fff;
-            background-color: #FFD700;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .product-item a:hover {
-            background-color: #ff6a00;
-        }
-
-        /* About Section */
-        .about {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #f8f8f8;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-family: 'Source Serif Pro', serif;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            font-weight: 400;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #2b2b2b;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        footer ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        footer ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-        }
-
-        footer ul li a:hover {
-            color: #FFD700;
-        }
-
-        /* Dark/Light Mode Toggle */
-        .dark-light-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #FFD700;
-            border: none;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .dark-light-toggle:hover {
-            background-color: #ff6a00;
-        }
-		
-	
 /* Dark Mode */
 body.dark-mode {
     background-color: #1f1f1f;
     color: #f4f4f4;
 }
 
-/* Ensure h3 and p inside .dark-mode are black */
-body.dark-mode h3,
-body.dark-mode p {
-    color: #333 !important; /* Ensures the text stays black in dark mode */
+/* Header */
+header {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 2rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Categories Bar */
+.categories-bar {
+    display: flex;  /* Use flexbox to align items horizontally */
+    justify-content: center;  /* Center align the items */
+    gap: 20px;  /* Add some space between the buttons */
+    padding: 20px 0;
+    background-color: #f8f8f8;
+}
+
+.categories-bar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: 2px solid #FFD700;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.categories-bar a:hover {
+    background-color: #FFD700;
+    color: white;
+}
+
+/* Category Buttons (New Section for Buttons Under Categories) */
+.category-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.category-button {
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;  /* Make the button clickable */
+    transition: transform 0.3s ease, opacity 0.3s ease;  /* Add smooth transition effects */
+}
+
+.category-button:hover {
+    transform: scale(1.05);  /* Slightly enlarge the button when hovered */
+    opacity: 0.8;  /* Optional: Add opacity change when hovering for a more interactive feel */
+}
+
+.category-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Product Listings Section */
+.products {
+    text-align: center;
+    padding: 60px 20px;
+    height: auto; /* Ensure container height adapts to content */
+    overflow: visible; /* Allow content to overflow if necessary */
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    font-family: 'Source Serif Pro', serif;
+    margin-bottom: 30px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Adjust grid for medium screens (tablets) */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+/* Adjust grid for small screens (mobile) */
+@media (max-width: 480px) {
+    .product-list {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.product-item p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.product-item .old-price {
+    text-decoration: line-through;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.product-item .new-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #228B22;
+}
+
+.product-item .description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.product-item a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #FFD700;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.product-item a:hover {
+    background-color: #ff6a00;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Source Serif Pro', serif;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer Section */
+footer {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+footer ul li a:hover {
+    color: #FFD700;
+}
+
+/* Dark/Light Mode Toggle */
+.dark-light-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #FFD700;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dark-light-toggle:hover {
+    background-color: #ff6a00;
 }
 
 .qr-codes {
@@ -397,23 +401,16 @@ body.dark-mode p {
 }
 
 /* Make logo clickable and remove link styling */
-        .logo-link {
-            text-decoration: none; /* Remove underline */
-            color: white; /* Keep the text color white */
-        }
+.logo-link {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Keep the text color white */
+}
 
-        .logo-link:hover {
-            color: #FFD700; /* Optional: Change color on hover */
-        }
-		
-		.app-description {
-        color: white !important; /* Make text white */
-        font-size: 16px; /* Adjust the font size if needed */
-        text-align: center !important; /* Optional, if you want to center the text */
-        margin-top: 1px !important; /* Optional, to add some space above the text */
-    }
-	
-	.product-item {
+.logo-link:hover {
+    color: #FFD700; /* Optional: Change color on hover */
+}
+
+.product-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -438,7 +435,6 @@ body.dark-mode p {
 /* Default styles for light mode (if necessary) */
 body {
     color: black;
-    
 }
 
 /* Dark mode styles */
@@ -457,6 +453,58 @@ body.dark-mode p1 {
     color: white !important; /* Ensure p text stays white in dark mode */
 }
 
+
+/* Categories Bar */
+.categories-bar {
+    display: flex;  /* Use flexbox to align items horizontally */
+    justify-content: center;  /* Center align the items */
+    gap: 20px;  /* Add some space between the buttons */
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    flex-wrap: wrap;  /* Allow items to wrap when needed */
+}
+
+.categories-bar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: 2px solid #FFD700;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.categories-bar a:hover {
+    background-color: #FFD700;
+    color: white;
+}
+
+/* Adjust categories bar for mobile screens */
+@media (max-width: 768px) {
+    .categories-bar {
+        justify-content: space-around; /* Distribute space evenly between items */
+        padding: 15px 10px; /* Adjust padding to fit better */
+    }
+
+    .categories-bar a {
+        font-size: 1rem; /* Reduce font size for mobile */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-bar {
+        justify-content: space-evenly; /* Space out links evenly */
+        padding: 10px 5px; /* Reduce padding on very small screens */
+    }
+
+    .categories-bar a {
+        font-size: 0.9rem; /* Make font smaller for very small screens */
+        padding: 8px 15px; /* Further reduce padding */
+    }
+}
 
     </style>
 </head>
