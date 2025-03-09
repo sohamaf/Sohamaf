@@ -571,6 +571,36 @@ footer ul li a:hover {
     margin-bottom: 5px;           /* Add space between the logo and text */
 }
 
+/* Default light mode styles */
+h3, p {
+    color: #333;  /* Dark text for light mode */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    h3, p {
+        color: #fff;  /* White text for dark mode */
+    }
+
+    .pack {
+        background-color: #333; /* Dark background for the pack container */
+    }
+    
+    .price .regular-price, .price .promo-price {
+        color: #fff;  /* Ensure price is also visible */
+    }
+
+    .green-btn {
+        background-color: #1e8e1e; /* Adjust button color if necessary */
+    }
+
+    /* Ensure the image containers have enough contrast if needed */
+    .image-container img {
+        filter: brightness(0.8); /* Darken images in dark mode */
+    }
+}
+
+
     </style>
 </head>
 <body>
